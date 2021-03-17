@@ -68,12 +68,22 @@ pc.script.createLoadingScreen(function (app) {
         ];
         
         var description = document.createElement('div');
-            description.innerText = '🧐 Tip : ' + hints[
+            description.innerText = 'ðŸ§ Tip : ' + hints[
                 Math.floor(Math.random() * hints.length)
             ];
             description.id = 'description';
         
         wrapper.appendChild(description);
+        
+        var backgroundVideo = document.createElement('video');
+            backgroundVideo.id = 'background-video';
+            backgroundVideo.src = 'https://venge.io/Background.mp4';
+            backgroundVideo.muted = true;
+            backgroundVideo.autoplay = true;
+            backgroundVideo.playsinline = true;
+            backgroundVideo.loop = true;
+            
+        wrapper.appendChild(backgroundVideo);
 
         var logo = document.createElement('div');
             logo.id = 'logo';
@@ -179,18 +189,20 @@ pc.script.createLoadingScreen(function (app) {
             '    left: 0;',
             '    height: 100%;',
             '    width: 100%;',
-            '    background: #191919 url("https://venge.io/Thumbnail-Large.jpg?v=1.0.2") no-repeat;',
-            '    background-size: 100% auto;',
-            '    background-repeat: none;',
-            '    background-position: center center;',
-            '    animation-name: background-image;',
-            '    animation-duration: 20s;',
+            '    background: #191919 no-repeat;',
             '}',
             
-            '@keyframes background-image {',
-            '    from { background-size: 100% auto; }',
-            '    to { background-size: 150% auto; }',
+            '#background-video {',
+            '    width:100%;',
+            '    height:100%;',
+            '    position:fixed;',
+            '    left:0px;',
+            '    top:0px;',
+            '    object-fit:cover;',
+            '    opacity:0.2;',
+            '    z-index:1;',
             '}',
+            
 
             '#application-splash {',
             '    position: absolute;',
@@ -198,6 +210,7 @@ pc.script.createLoadingScreen(function (app) {
             '    width: 450px;',
             '    left: 50%;',
             '    transform: translate(-50%, -50%);',
+            '    z-index:5;',
             '}',
 
             '#application-splash img {',
@@ -286,7 +299,7 @@ pc.script.createLoadingScreen(function (app) {
             '    width: 0%;',
             '    height: 100%;',
             '    background-color: #ffffff;',
-            '    box-shadow: 0px 0px 30px #ffffff;',
+            '    box-shadow: 0px 0px 40px #ffffff;',
             '}',
             '@media (max-width: 480px) {',
             '    #application-splash {',
@@ -328,18 +341,16 @@ pc.script.createLoadingScreen(function (app) {
     showSplash();
         
     app.on('preload:start', function () {
-        var randomImage = new Image();
-            randomImage.src = pc.app.assets.find('Lilium-Thumbnail-3').getFileUrl();
-            randomImage.id  = 'animated-loading-image-1';
-        
-        wrapper.appendChild(randomImage);
+
     });
     
     app.on('preload:end', function () {
         app.off('preload:progress');
-	var script = document.createElement('script');
-	script.src = './lensfix.js';
-	document.head.appendChild(script);
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = './lensfix.js';
+            document.head.appendChild(script);
+        }, 1000)
     });
     app.on('preload:progress', setProgress);
     app.on('start', hideSplash);
