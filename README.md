@@ -2,7 +2,7 @@
 A mod for the official Venge Client.
 
 - **THIS MOD WILL BREAK EVERY UPDATE!** *Do not use the mod if the current Venge version is not supported.*
-- *Current Supported Version:* **v1.0.69**
+- *Current Supported Version:* **v1.0.70**
 
 # Features
 - New gun models and textures that honors all you anime lovers.
