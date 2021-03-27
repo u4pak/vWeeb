@@ -9,6 +9,8 @@
     <br />
     <a href="https://github.com/KruzShady/vWeeb/releases/latest/download/vWeeb.zip">Download</a>
     ·
+    <img alt="Total Downloads" src="https://img.shields.io/github/downloads/kruzshady/vWeeb/total?label=Downloads">
+    ·
     <a href="https://github.com/KruzShady/vWeeb/issues">Report Bugs</a>
   </p>
 </p>
