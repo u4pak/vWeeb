@@ -25,5 +25,3 @@
 2. Open **vWeeb.zip**
 3. Drag the contents of **vWeeb.zip** into your Venge Client resource swapper
 4. Launch or restart your client
-
-Have fun, and enjoy vWeeb!
