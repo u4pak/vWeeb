@@ -20,8 +20,17 @@
 - Satisfying kill and damage sounds.
 - Simplified Sierra textures that will make your game run even faster.
 
-## Usage
-1. Download the [latest release here](https://github.com/KruzShady/vWeeb/releases/latest/download/vWeeb.zip "Latest Release").
-2. Open **vWeeb.zip**
-3. Drag the contents of **vWeeb.zip** into your Venge Client resource swapper
+## Installation Methods
+
+#### Quick Installation
+1. Right click [vWeeb](https://github.com/kruzshady/vweeb/releases/latest/download/vWeeb.zip/)and click "Copy Link Address"
+2. Go to your Venge Client settings
+3. Go to **Client**
+4. Paste the link into the **Resource URL** box
+5. Restart your client
+
+#### Manual Installation
+1. Download the [latest release here](https://github.com/KruzShady/vWeeb/releases/latest "Latest Release").
+2. Download and open **vWeeb.zip**
+3. Extract the contents of **vWeeb.zip** into your Venge Client resource swapper (Only exception is for the lensfix script. Put it in your userscript folder)
 4. Launch or restart your client
